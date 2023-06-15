@@ -30,14 +30,14 @@ def test_breadth_first_search():
     }
 
     assert breadth_first_search(graph_of_friends, "you") == "thom"
-    assert breadth_first_search(graph_of_friends, "bob") == None
+    assert not breadth_first_search(graph_of_friends, "bob")
 
 def test_person_is_seller():
-    assert person_is_seller("thom") == True
-    assert person_is_seller("bob") == False
+    assert person_is_seller("thom")
+    assert not person_is_seller("bob")
 
 
-def test_breadth_first_search(benchmark):
+def test_breadth_first_search_tuple(benchmark):
     graph_of_friends = random_friend_graph(10000)  # Generate a graph with 10,000 nodes
 
     # Use the benchmark fixture
