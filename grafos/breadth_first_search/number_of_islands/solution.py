@@ -1,4 +1,6 @@
 from collections import deque
+from rich import print
+
 
 def is_valid_and_unvisited(
     grid: list[list[str]], visited: set[tuple[int, int]], row: int, col: int
@@ -54,6 +56,16 @@ def number_of_islands(grid: list[list[str]]) -> int:
 def main() -> None:
     grid = [
         ["1","1","1","1","0"],
+        ["1","1","0","0","0"],
+        ["1","0","1","0","1"],
+        ["0","0","0","0","1"]
+    ]
+    islands = number_of_islands(grid)
+    print(f"Number of islands: {islands}")
+    print(islands == 3)
+
+    grid = [
+        ["1","1","1","1","0"],
         ["1","1","0","1","0"],
         ["1","1","0","0","0"],
         ["0","0","0","0","0"]
@@ -61,7 +73,6 @@ def main() -> None:
     islands = number_of_islands(grid)
     print(f"Number of islands: {islands}")
     print(islands == 1)
-
 
 if __name__ == "__main__":
     main()
