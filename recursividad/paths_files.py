@@ -3,7 +3,6 @@ from rich import print
 
 def create_file_path(file_path, filesystem):
     # split the file path into parts
-    breakpoint(context=10)
     parts = file_path.strip('/').split('/')
     current_dir = filesystem
     for part in parts:
@@ -12,7 +11,8 @@ def create_file_path(file_path, filesystem):
         current_dir = current_dir[part]
     return filesystem
 
-def create_file_path_recursivily(file_path, dir_dict):
+
+def create_file_path_recursively(file_path, dir_dict):
     # split the file path into parts
     parts = file_path.strip('/').split('/')
     # Base case: if parts is empty, return the directory dictionary
